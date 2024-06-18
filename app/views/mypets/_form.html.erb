@@ -1,0 +1,46 @@
+<%= form_with(model: mypet) do |form| %>
+  <% if mypet.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(mypet.errors.count, "error") %> prohibited this mypet from being saved:</h2>
+
+      <ul>
+        <% mypet.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :age, style: "display: block" %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div>
+    <%= form.label :animal_type, style: "display:block" %>
+    <%= form.text_field :animal_type %>
+  </div>
+
+  <div>
+    <%= form.label :cost_per_year, style: "display: block" %>
+    <%= form.number_field :cost_per_year %>
+  </div>
+
+
+<%= form.radio_button :gender, "male", data: { custom: "value" } %>
+<%= form.label :gender_male, "Male", value: "male" %>
+
+<%= form.radio_button :gender, "female", data: { custom: "value" } %>
+<%= form.label :gender_female, "Female", value: "female" %>
+
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
