@@ -31,6 +31,7 @@ gem "jbuilder"
 
 gem 'webpacker'
 
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -49,6 +50,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'dotenv-rails', groups: [:development, :test]
 end
 
 group :development do
@@ -70,3 +72,6 @@ group :test do
 end
 
 gem "font-awesome-sass", "~> 6.5"
+
+gem "omniauth-rails_csrf_protection"
+gem "omniauth-keycloak"
